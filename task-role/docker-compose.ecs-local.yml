@@ -1,0 +1,19 @@
+version: "3.4"
+services:
+  task-role:
+    environment:
+      AWS_CONTAINER_CREDENTIALS_RELATIVE_URI: /creds
+      ECS_CONTAINER_METADATA_URI: http://169.254.170.2/v3
+    image: task-role
+    labels:
+      ecs-local.task-definition-input.type: local
+      ecs-local.task-definition-input.value: /Users/peckn/Documents/Code/ecs-local/task-role/task-definition.json
+    networks:
+      ecs-local-network: null
+    ports:
+    - target: 8081
+      published: 8081
+      protocol: tcp
+networks:
+  ecs-local-network:
+    external: true

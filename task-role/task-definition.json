@@ -1,0 +1,23 @@
+{
+  "containerDefinitions": [
+     {
+        "essential": true,
+        "image": "task-role",
+        "name": "task-role",
+        "portMappings": [
+           {
+              "containerPort": 8081,
+              "hostPort": 8081,
+              "protocol": "tcp"
+           }
+        ]
+     }
+  ],
+  "cpu": "256",
+  "family": "task-role",
+  "memory": "512",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": [
+      "FARGATE"
+   ]
+}

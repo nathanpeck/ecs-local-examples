@@ -1,0 +1,23 @@
+{
+  "containerDefinitions": [
+     {
+        "essential": true,
+        "image": "daviey/nyan-cat-web",
+        "name": "nyan",
+        "portMappings": [
+           {
+              "containerPort": 80,
+              "hostPort": 8080,
+              "protocol": "tcp"
+           }
+        ]
+     }
+  ],
+  "cpu": "256",
+  "family": "nyancat",
+  "memory": "512",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": [
+      "FARGATE"
+   ]
+}
