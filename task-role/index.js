@@ -4,16 +4,6 @@ const morgan = require('morgan');
 const app = express();
 
 var AWS = require('aws-sdk');
-
-AWS.config.httpOptions.connectTimeout = 100;
-AWS.config.maxRetries = 0;
-
-AWS.CredentialProviderChain.defaultProviders = [
-  function() { return new AWS.EnvironmentCredentials('AWS'); },
-  function() { return new AWS.EnvironmentCredentials('AMAZON'); },
-  function() { return new AWS.ECSCredentials(); }
-];
-
 var STS = new AWS.STS();
 
 // Log requests
